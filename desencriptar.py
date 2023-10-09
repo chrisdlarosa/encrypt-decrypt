@@ -1,4 +1,3 @@
-import base64
 from cryptography.fernet import Fernet
 
 #Abrimo llave en archivo clave.key
@@ -9,6 +8,7 @@ cipher_suite = Fernet(key)
 # Para recuperar el texto encriptado del archivo más adelante:
 with open("texto_encriptado.txt", "rb") as file:
      texto_encriptado = file.read()
+
 texto_desencriptado_bytes = cipher_suite.decrypt(texto_encriptado)
 texto_desencriptado = texto_desencriptado_bytes.decode('utf-8')
 
